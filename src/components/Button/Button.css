@@ -1,0 +1,17 @@
+button.components__button__button {
+  border-radius: 0px;
+  text-transform: uppercase;
+  height: 42px;
+  width: 210px;
+  font-size: 14px;
+  background-color: #148ac5;
+  border: none;
+  color: white;
+  margin-top: 29px;
+  font-weight: bold;
+}
+
+button.components__button__button:disabled {
+  background-color: rgba(255,255,255, .5);
+  color: rgba(255,255,255, .2);
+}

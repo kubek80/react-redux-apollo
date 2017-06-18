@@ -1,0 +1,20 @@
+.components__nav {
+  text-align: left;
+  background:#e00;
+  font-size: 24px;
+  padding: 5px;
+  color: #fff;
+}
+
+.components__nav__nav-link {
+  font-family: "Ciutadella","Arial Narrow",sans-serif;
+  text-decoration: none;
+  padding: 20px;
+  color: #fff;
+  line-height: 50px;
+  letter-spacing: 1px;
+}
+
+.components__nav__nav-link:hover {
+  text-decoration: underline;
+}

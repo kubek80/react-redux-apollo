@@ -1,0 +1,9 @@
+// Eslint in Create React App is minimap - adding this file enables linting inside editor only
+
+{
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": "off", // preventing check on index.js - to avoid necessity of ejecting from create-react-app
+    "react/prefer-stateless-function": "off", // pure functions are not yet optimized so favouring PureComponent
+  }
+}

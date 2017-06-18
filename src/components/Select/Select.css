@@ -1,0 +1,8 @@
+.components_select__wrapper {
+  float: left;
+}
+
+.components_select__wrapper__label {
+  color: #fff;
+  display: block;
+}
