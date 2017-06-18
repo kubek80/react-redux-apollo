@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { gql, graphql } from 'react-apollo';
 import { CarOfTheWeek } from '../../components';
-
 
 class Home extends Component {
   constructor(props) {
@@ -19,4 +19,21 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const carOfTheWeekQuery = gql`
+  query carOfTheWeek {
+    carOfTheWeek {
+      review
+      maker {
+        name
+      }
+      model {
+        name
+        price
+        imageUrl
+      }
+    }
+  }
+ `;
+
+
+export default graphql(carOfTheWeekQuery)(Home);
