@@ -6,13 +6,13 @@ Project was built with node v6.9.1
 You can find the most recent version of Create React App: [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ### Requirements
-This project to run correctly requires api can be found:
+This project to run correctly requires api, that can be found:
+https://github.com/kubek80/graphql-mockserver
 
 All data is fetched via apollo-client from this api.
 API has to be running before running this app.
 
 ### Installation
-https://github.com/kubek80/graphql-mockserver
 
 ##### To download repository:
 ```bash
