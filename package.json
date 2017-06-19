@@ -1,5 +1,5 @@
 {
-  "name": "quantas-test",
+  "name": "react-redux-router-apollo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
