@@ -17,7 +17,7 @@ class Search extends Component {
     const { dispatch, selectors, makers } = this.props;
 
     const getList = id => get(find(makers, el => el.id === +id, {}), 'models');
-    const getUrl = () => `/result/${selectors.maker}/${selectors.model}`;
+    const getUrl = () => `/${selectors.maker}/${selectors.model}`;
 
     return (
       <main>

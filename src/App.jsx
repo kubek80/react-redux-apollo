@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Navigation } from './components';
+import { Route, Switch } from 'react-router';
+import { Navigation, NotFound } from './components';
 import { Home, Search, CarDetails } from './containers';
 
 
@@ -9,9 +9,12 @@ export default class App extends Component {
     return (
       <div className="App">
         <Navigation />
-        <Route exact path="/" component={Home} />
-        <Route path="/search" component={Search} />
-        <Route path="/result/:makerId/:modelId" component={CarDetails} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/search" component={Search} />
+          <Route path="/:makerId/:modelId" component={CarDetails} />
+          <Route path="*" component={NotFound} />
+        </Switch>
       </div>
     );
   }
