@@ -1,13 +1,13 @@
 // Combined components export for one line imports
 
 import Button from './Button/Button';
-import CarOfTheWeek from './CarOfTheWeek/CarOfTheWeek';
+import CarPresentation from './CarPresentation/CarPresentation';
 import Navigation from './Navigation/Navigation';
 import Select from './Select/Select';
 
 export {
   Button,
-  CarOfTheWeek,
+  CarPresentation,
   Navigation,
   Select,
 };

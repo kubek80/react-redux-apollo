@@ -1,23 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { gql, graphql } from 'react-apollo';
-import { CarOfTheWeek } from '../../components';
+import get from 'lodash.get';
+import { CarPresentation } from '../../components';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { description: '' };
-  }
 
-  componentWillMount() {
-    this.setState({ description: 'The Mazda MX-5 is a traditional two-seat sports car, with a lightweight body and rear-wheel drive. It has a folding, fabric roof and is among the least expensive convertibles. This fourth-generation MX-5 is fantastic fun to drive. Motoring magazine Wheels named it Car of the Year for 2016.' });
-  }
+const Home = props => (
+  <CarPresentation
+    loading={props.loading}
+    maker={get(props, 'car.maker.name')}
+    model={get(props, 'car.model.name')}
+    price={get(props, 'car.model.price')}
+    image={get(props, 'car.model.imageUrl')}
+    review={props.car.review}
+    carOfTheWeek
+  />
+);
 
-  render() {
-    return (
-      <CarOfTheWeek description={this.state.description} />
-    );
-  }
-}
+Home.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  car: PropTypes.shape({
+    review: PropTypes.string,
+    maker: PropTypes.shape({ name: PropTypes.string }),
+    model: PropTypes.shape({
+      name: PropTypes.string,
+      price: PropTypes.number,
+      imageUrl: PropTypes.string,
+    }),
+  }),
+};
+
+Home.defaultProps = {
+  car: { maker: {}, model: {} },
+};
 
 const carOfTheWeekQuery = gql`
   query carOfTheWeek {
@@ -35,5 +50,10 @@ const carOfTheWeekQuery = gql`
   }
  `;
 
-
-export default graphql(carOfTheWeekQuery)(Home);
+export default graphql(carOfTheWeekQuery, {
+  props: ({ data: { loading, carOfTheWeek, error } }) => ({
+    loading,
+    error,
+    car: carOfTheWeek,
+  }),
+})(Home);

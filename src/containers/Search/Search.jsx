@@ -61,9 +61,13 @@ class Search extends Component {
 
 Search.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  selectors: PropTypes.object.isRequired,
+  selectors: PropTypes.shape({
+    maker: PropTypes.string,
+    model: PropTypes.string,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({ selectors: state.selectors });
+const connectedSearch = connect(mapStateToProps)(Search);
 
-export default connect(mapStateToProps)(Search);
+export default connectedSearch;

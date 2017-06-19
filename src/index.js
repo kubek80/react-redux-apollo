@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
+import { ApolloClient, ApolloProvider } from 'react-apollo';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 
