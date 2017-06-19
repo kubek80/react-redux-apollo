@@ -1,6 +1,7 @@
 import * as actions from './index';
 import * as types from '../actionTypes';
 
+/* global it, describe, expect */
 describe('actions', () => {
   it('should create an action search select maker', () => {
     const selected = 10;
@@ -19,9 +20,9 @@ describe('actions', () => {
     };
     expect(actions.selectValue(10, 'model')).toEqual(expectedAction);
   });
-  
+
   it('should create an action clear selects', () => {
     const expectedAction = { type: types.SEARCH_CLEAR_SELECTS };
     expect(actions.clearSelects()).toEqual(expectedAction);
   });
-})
+});
